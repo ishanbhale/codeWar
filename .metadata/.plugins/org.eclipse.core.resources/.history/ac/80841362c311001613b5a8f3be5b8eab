@@ -1,0 +1,23 @@
+package com.practice;
+
+public class PatternMatching {
+
+	public static void main(String[] args) {
+		String str = "push4push20push+pop";
+		char[] ch = str.toCharArray();
+		
+		for (int i = 0; i < ch.length; i++){
+			
+			StringBuilder sb = new StringBuilder("");
+			sb.append(ch[i]);
+			if(sb.equals("push"))
+			{
+				System.out.println("Operation found at " + i);
+			}
+		
+			
+		}
+		
+	}
+
+}

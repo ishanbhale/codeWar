@@ -1,0 +1,8 @@
+package com.String;
+
+public class TestString {
+public static void main(String args[]){
+	String x= "Welcome";
+	System.out.println("x: "+ x);
+}
+}

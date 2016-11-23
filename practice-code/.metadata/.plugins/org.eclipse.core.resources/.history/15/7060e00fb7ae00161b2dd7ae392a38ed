@@ -1,0 +1,12 @@
+package com.implement.treeandgraph;
+import java.util.ArrayList; 
+import java.util.Stack; 
+public class GraphDFSImpl 
+{ 
+	static ArrayList<Node> nodes=new ArrayList<Node>(); 
+	static class Node { 
+		int data; boolean visited; Node(int data) { 
+			this.data=data; 
+			} 
+		}
+}

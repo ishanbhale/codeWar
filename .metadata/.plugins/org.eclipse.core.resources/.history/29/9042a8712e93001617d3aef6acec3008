@@ -1,0 +1,33 @@
+package com.String;
+
+public class reverseString {
+public static void main (String []s){
+	
+String str = "This is java";
+	
+System.out.println(str);
+
+
+
+
+String reverseStr = new StringBuffer(str).reverse().toString();
+System.out.println(reverseStr);
+reverseIteratively(str);
+
+}
+
+
+public static void reverseIteratively( String str){
+	StringBuilder s = new StringBuilder();
+	char []ch = str.toCharArray();
+for (int i =str.length()-1; i >= 0; i--){
+	s.append(ch[i]);
+}
+
+
+	}
+}
+
+
+
+	

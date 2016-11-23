@@ -1,0 +1,18 @@
+package com.solve.ctci.arraysandstrings.mycode;
+
+public class StringPermutationA {
+	
+	static boolean isPermutation(String a, String b){
+		return false;
+	}
+	
+	
+public static void main(String []args){
+	String word_set[][] = {{"apple", "pplea"}, {"bat, tab"}};
+	for(String[] pair : word_set){
+		String wordA = pair[0];
+		String wordB = pair[1];
+		System.out.println(wordA + "& "+ wordB +"are permutations: "+ isPermutation(wordA, wordB));
+	}
+}
+}

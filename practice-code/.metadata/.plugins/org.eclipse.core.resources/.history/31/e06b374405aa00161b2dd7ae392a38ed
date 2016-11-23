@@ -1,0 +1,7 @@
+package com.solve.ctci.arraysandstrings.mycode;
+
+public class StringPermutationA {
+public static void main(String []args){
+	String word_set[][] = {{"apple", "pplea"}, {"bat, tab"}};
+}
+}

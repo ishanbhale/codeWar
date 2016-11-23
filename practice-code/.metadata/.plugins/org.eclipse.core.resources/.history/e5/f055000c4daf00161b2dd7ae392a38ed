@@ -1,0 +1,6 @@
+package com.practice;
+
+public class ComparableCountry implements Comparable<ComparableCountry>{
+	
+	
+    }	

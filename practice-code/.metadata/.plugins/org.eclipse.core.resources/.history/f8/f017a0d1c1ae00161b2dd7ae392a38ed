@@ -1,0 +1,65 @@
+package com.implement.treeandgraph;
+
+import java.util.Stack;
+
+public class InorderTutHorizonImpl {
+
+	public void postOrderRecursive(NodeDomObj root) {
+		if (root != null) {
+			postOrderRecursive(root.left);
+			postOrderRecursive(root.right);
+			System.out.print(root.data + " ");
+		}
+	}
+
+	public void preorderIteration(NodeDomObj root) {
+		Stack<NodeDomObj> s1 = new Stack<NodeDomObj>();
+		Stack<NodeDomObj> s2 = new Stack<NodeDomObj>();
+		// push the root node into first stack.
+		s1.push(root);
+		while (s1.isEmpty() == false) {
+			// take out the root and insert into second stack.
+			NodeDomObj temp = s1.pop();
+			s2.push(temp);
+			// now we have the root, push the left and right child of root into
+			// the first stack.
+			if(temp.left!=null){
+				s1.push(temp.left);
+			}
+			if(temp.right!=null){
+				s1.push(temp.right);
+			}
+		}
+		//once the all node are traversed, take out the nodes from second stack and print it.
+		System.out.println("Preorder Traversal: ");
+		while(s2.isEmpty()==false){
+			System.out.print(s2.pop());
+		}
+	}
+
+	public static void main(String[] args) {
+		NodeDomObj root = new NodeDomObj(1);
+		root.left = new NodeDomObj(2);
+		root.right = new NodeDomObj(3);
+		root.left.left = new NodeDomObj(4);
+		root.left.right = new NodeDomObj(5);
+		root.right.left = new NodeDomObj(6);
+		root.right.right = new NodeDomObj(7);
+
+		InorderTutHorizonImpl i = new InorderTutHorizonImpl();
+		i.postOrderRecursive(root);
+		System.out.println();
+		i.postOrderRecursive(root);
+	}
+
+}
+
+class NodeDomObj {
+	int data;
+	NodeDomObj left;
+	NodeDomObj right;
+
+	public NodeDomObj(int data) {
+		this.data = data;
+	}
+}

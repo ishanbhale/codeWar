@@ -1,0 +1,7 @@
+package com.practice;
+
+public class ComparatorCountry {
+	int countryId;
+	String countryName;
+	
+}

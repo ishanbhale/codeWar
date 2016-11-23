@@ -1,0 +1,59 @@
+package com.solve.ctci.arraysandstrings.mycode;
+
+public class URLify {
+
+	static String changeURL(int trueLength, char[] ch){
+		int space_count = 0;
+		for (int i = trueLength; i>0;i--){
+			if(ch[i] == ' '){
+				space_count++;
+			}
+		}
+		int index = space_count +trueLength;
+		for (int i=index-1; i>=0;i--){
+			if(ch[i] == ' ')
+			{
+			ch[index-1]	 = '0';
+			ch[index-2]	 = '2';
+			ch[index-3]	 = '%';
+			index = index-3;
+			}else{
+				ch[index-1]= ch[i];
+				index--;
+			}
+		}
+		
+		return null;
+	}
+	public static String charArrayToString(char[] array) {
+		StringBuilder buffer = new StringBuilder(array.length);
+		for (char c : array) {
+			if (c == 0) {
+				break;
+			}
+			buffer.append(c);
+		}
+		return buffer.toString();
+	}
+
+	
+	static int findTrueLength(char[] str)
+	{
+		for(int i = str.length; i>0;i--){
+			if(str[i] != ' '){
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "My name is Ishan";
+		char[] ch = str.toCharArray();
+		int trueLength = 	findTrueLength(ch) +1;
+		
+		
+	}
+
+}

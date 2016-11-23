@@ -1,0 +1,28 @@
+package com.solve.ctci.arraysandstrings.mycode;
+
+import java.util.Arrays;
+
+public class StringPermutationA {
+	
+	static boolean isPermutation(String wordA, String wordB){
+		char[] a = wordA.toCharArray();
+		Arrays.sort(a);
+		char[] b = wordB.toCharArray();
+		Arrays.sort(b);
+		wordA = a.toString();
+		wordB = b.toString();
+		return new String(wordA).equals(new String (wordB));
+			
+	
+	}
+	
+	
+public static void main(String []args){
+	String word_set[][] = {{"apple", "pplea"}, {"bat, tab"}};
+	for(String[] pair : word_set){
+		String wordA = pair[0];
+		String wordB = pair[1];
+		System.out.println(wordA + "& "+ wordB +"are permutations: "+ isPermutation(wordA, wordB));
+	}
+}
+}

@@ -1,0 +1,55 @@
+package com.practice;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+
+public class PatternMatching {
+
+	public static void main(String[] args) {
+		String str = "push4push20push+pop20";
+		
+		StringBuffer sf = new StringBuffer("");
+	
+		List<Double> ll = new LinkedList<Double>();
+		
+			String[] items = str.split("[a-zA-Z]+");
+			for (String item:items){
+				System.out.println(item);
+				try {
+					if(item!=null && !item.equals("")){
+					ll.add(Double.parseDouble(item));
+					System.out.println(ll.toString());}
+				} catch (NumberFormatException e) {
+					System.out.println("Wrong Value");
+					e.printStackTrace();
+				}
+					}
+			
+			
+			 for (String retval: str.split("push")){
+		         System.out.println(retval);
+		      }	
+			
+		char[] ch = str.toCharArray();	
+			
+		for (int i = 0; i < ch.length; i++){
+					
+			sf.append(ch[i]);
+			if(sf.toString().equals("push"))
+			{
+				
+				System.out.println("Push found at " + i);
+		//		sf.delete(0, sf.length());
+				
+			}else if(sf.toString().equals("pop")){
+				System.out.println("Pop found at " + i);
+			}
+		
+		
+			
+		}
+		
+	}
+
+}

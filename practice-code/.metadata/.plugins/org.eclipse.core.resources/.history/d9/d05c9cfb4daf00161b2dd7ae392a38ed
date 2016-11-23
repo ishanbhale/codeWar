@@ -1,0 +1,19 @@
+package com.practice;
+
+public class ComparatorCountry {
+	int countryId;
+	String countryName;
+	public int getCountryId() {
+		return countryId;
+	}
+	public void setCountryId(int countryId) {
+		this.countryId = countryId;
+	}
+	public ComparatorCountry(int countryId, String countryName) {
+		super();
+		this.countryId = countryId;
+		this.countryName = countryName;
+	}
+	
+	
+}

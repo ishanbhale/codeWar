@@ -1,0 +1,27 @@
+package com.implement.hashtable;
+
+import java.util.Scanner;
+
+class HashTable{
+	
+	HashTable(int size){
+		
+	}
+	
+}
+
+public class HashTableImpl {
+
+	
+	 public static void main (String args[]){
+		 
+		 Scanner scan = new Scanner(System.in);
+		 System.out.println("Hash Table Implementation:");
+		 System.out.println("Enter Table Size:");
+		 
+		 HashTable ht = new HashTable(scan.nextInt());		 
+	 }
+	 
+	 
+	 
+}

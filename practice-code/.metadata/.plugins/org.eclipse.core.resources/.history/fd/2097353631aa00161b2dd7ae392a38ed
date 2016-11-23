@@ -1,0 +1,29 @@
+package com.solve.ctci.arraysandstrings.mycode;
+
+public class URLify {
+
+	static String changeURL(){
+		return null;
+	}
+	
+	
+	static int findTrueLength(char[] str)
+	{
+		for(int i = str.length; i>0;i--){
+			if(str[i] != ' '){
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "My name is Ishan";
+		char[] ch = str.toCharArray();
+		int trueLength = 	findTrueLength(ch) +1;
+		
+		
+	}
+
+}

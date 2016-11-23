@@ -1,0 +1,17 @@
+package com.solve.hackerrank;
+
+import java.util.Scanner;
+
+public class StringCompare {
+	public static void main(String[] args) {
+        Scanner in = new Scanner (System.in);
+        String str = in.nextLine();
+        int i = in.nextInt();
+        String a = "";
+        String b = "";
+        for(int j = 0 ; j < str.length() - 2;j++){
+        	
+        }
+    }
+}
+;

@@ -1,0 +1,24 @@
+package com.implement.list;
+
+public class ArrayListImpl {
+	Object[] elementData; 
+	int size = 0;
+	void add(Object o){
+		if(elementData.length - size < 0){
+			size = (size * 3)/2 + 1;
+		}
+		
+		
+	}
+	int[] get(){
+		return elementData[];
+	}
+	public static void main(String[] args) {
+		add
+		
+		for 
+		System.out.println();
+		
+	}
+
+}

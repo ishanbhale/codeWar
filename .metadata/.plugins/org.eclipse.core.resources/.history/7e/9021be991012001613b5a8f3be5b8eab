@@ -1,0 +1,18 @@
+package com.practice;
+
+public class DemoTest1 {
+
+	public static void main(String[] args) {
+		DemoTest1 d = new DemoTest1();
+		int[] data = {10,20,30,40,50,60,71,80,90,91};
+		System.out.println(d.solution(data,10));
+
+	}
+	int solution(int A[], int N) {
+		int sum = 0;
+		for (int i : A){
+		    sum += i;}
+			return sum;
+	    // write your code in C99 (gcc 4.8.2)
+	}
+}

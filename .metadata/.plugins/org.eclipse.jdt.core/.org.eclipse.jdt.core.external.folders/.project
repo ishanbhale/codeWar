@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>.org.eclipse.jdt.core.external.folders</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>.link2</name>
+			<type>2</type>
+			<location>D:/Study/Tomcat/apache-tomcat-8.0.37-src/apache-tomcat-8.0.37-src</location>
+		</link>
+		<link>
+			<name>.link3</name>
+			<type>2</type>
+			<location>D:/Study/Java Source/openjdk-7-fcs-src-b147-27_jun_2011/openjdk</location>
+		</link>
+	</linkedResources>
+</projectDescription>

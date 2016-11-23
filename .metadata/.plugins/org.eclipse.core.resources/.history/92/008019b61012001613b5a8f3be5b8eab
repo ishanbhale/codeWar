@@ -1,0 +1,34 @@
+package com.practice;
+
+public class DemoTest1 {
+
+	public static void main(String[] args) {
+		DemoTest1 d = new DemoTest1();
+		int[] data = {10,20,30,40,50,60,71,80,90,91};
+		System.out.println(d.solution(data,10));
+
+	}
+	int solution(int A[], int N) {
+		int evaulate = 0;
+		int sum = 0;
+		for (int i : A){
+		    sum += i;
+		    }
+		
+		for (int i = 0; i < A.length;i++)
+		
+		{
+			int lhs = 0;
+			int rhs = 0 ;
+			lhs = A[i] +lhs;
+			rhs = sum - lhs;
+			evaulate = lhs - rhs;
+			if (){
+				
+			}
+			
+		}
+			return sum;
+	    // write your code in C99 (gcc 4.8.2)
+	}
+}

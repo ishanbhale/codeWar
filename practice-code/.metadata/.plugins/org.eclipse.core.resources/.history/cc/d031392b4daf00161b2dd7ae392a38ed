@@ -1,0 +1,5 @@
+package com.practice;
+
+class ComparableCountry implements Comparable<T> {
+
+}

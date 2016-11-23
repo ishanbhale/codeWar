@@ -1,0 +1,66 @@
+package com.implement.list;
+
+public class LinkedListImpl<T> {
+	 private Node<T> head;
+	 private Node<T> tail;
+	void add(T element){
+		Node<T> nd = new Node<T>();
+		nd.setValue(element);
+		if (head == null){
+			head = nd;
+			tail = nd;
+		}
+		else{
+			tail.setNextRef(nd);
+			tail = nd;
+		}
+		
+		System.out.println("Adding: " + element);
+	}
+	
+	void traverse(){
+		Node<T> tNode = head;
+		while(tNode != null){
+			System.out.println(tNode.getValue());
+			tNode = tNode.getNextRef();
+			}
+	}
+	
+	public static void main(String[] args) {
+	LinkedListImpl<Integer> obj = new LinkedListImpl<Integer>();
+	obj.add(23);
+	obj.traverse();
+	
+	
+	}
+
+}
+
+
+
+class NodeLinkedList<T> implements Comparable<T>{
+private T value;
+private NodeLinkedList<T> nextRef;
+	public T getValue() {
+	return value;
+}
+public void setValue(T value) {
+	this.value = value;
+}
+public NodeLinkedList<T> getNextRef() {
+	return nextRef;
+}
+public void setNextRef(NodeLinkedList<T> nextRef) {
+	this.nextRef = nextRef;
+}
+	@Override
+	public int compareTo(T o) {
+		if(this.value  ==  o){
+			return 0;
+		}
+		else{
+			return 1;
+		}
+	}
+	
+}

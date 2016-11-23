@@ -1,0 +1,9 @@
+package com.practice;
+//If this.cuntryId < country.countryId:then compare method will return -1
+//If this.countryId > country.countryId:then compare method will return 1
+//If this.countryId==country.countryId:then compare method will return 0
+public class ComparableCountry implements Comparable<ComparableCountry>{
+	int countryId;
+	String countryName;
+	
+    }

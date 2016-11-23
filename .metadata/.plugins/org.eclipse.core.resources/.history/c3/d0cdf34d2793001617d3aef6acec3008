@@ -1,0 +1,17 @@
+package com.String;
+
+public class NonRepeatedCharacter {
+public static void main (String s[]){
+	getNonRepeatedCharacter("programming");
+}
+	public static void getNonRepeatedCharacter(String s){
+	char charac[] = s.toCharArray();
+	Map <Character, Integer> m = new HashMap<Character, Integer>();
+	for (Character ch : charac){
+		System.out.println(ch);
+		
+		
+	}
+}
+
+}

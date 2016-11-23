@@ -1,0 +1,31 @@
+package com.practice;
+
+import java.util.HashMap;
+
+public class PatternMatching {
+
+	public static void main(String[] args) {
+		String str = "push4push20push+pop";
+		char[] ch = str.toCharArray();
+		StringBuffer sf = new StringBuffer("");
+			HashMap<String, Integer> m= new HashMap();
+	/*	for (int i = 0; i < ch.length; i++){
+					
+			sf.append(ch[i]);
+			if(sf.toString().equals("push"))
+			{
+				
+				System.out.println("Push found at " + i);
+				sf.delete(0, sf.length());
+				
+			}else if(sf.toString().equals("pop")){
+				System.out.println("Pop found at " + i);
+			}
+		
+		
+			
+		}
+		*/
+	}
+
+}

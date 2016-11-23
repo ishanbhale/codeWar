@@ -1,0 +1,11 @@
+package com.practice;
+
+public class PatternMatching {
+
+	public static void main(String[] args) {
+		String str = "push4push20push+pop";
+		char[] ch = str.toCharArray();
+		
+	}
+
+}

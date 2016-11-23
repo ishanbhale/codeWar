@@ -1,0 +1,18 @@
+package com.solve.ctci.arraysandstrings.mycode;
+
+public class UniqueA {
+	
+	
+	public static void main(String args[]){
+	String words[] = {"abcde", "apple"};
+	for (String word: words){
+	System.out.println(word + isUniqueChars(word));
+	}
+}
+
+	private static boolean isUniqueChars(String word) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,0 +1,39 @@
+package com.implement.list;
+
+public class LinkedListImpl {
+
+	public static void main(String[] args) {
+	
+
+	}
+
+}
+
+
+
+class NodeLinkedList<T> implements Comparable<T>{
+private T value;
+private NodeLinkedList<T> nextRef;
+	public T getValue() {
+	return value;
+}
+public void setValue(T value) {
+	this.value = value;
+}
+public NodeLinkedList<T> getNextRef() {
+	return nextRef;
+}
+public void setNextRef(NodeLinkedList<T> nextRef) {
+	this.nextRef = nextRef;
+}
+	@Override
+	public int compareTo(T o) {
+		if(o == this.value){
+			return 0;
+		}
+		else{
+			return 1;
+		}
+	}
+	
+}

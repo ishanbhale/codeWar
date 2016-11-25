@@ -1,0 +1,29 @@
+package com.implement.treeandgraphs;
+
+class NodeBO{
+	NodeBO left;
+	NodeBO right;
+	int data;
+	public NodeBO(int data) {
+		super();
+		this.data = data;
+	}
+	
+	
+}
+
+public class BinarySearchTreeImpl {
+	NodeBO parent;
+	int size;
+	int data;
+	BinarySearchTreeImpl(){
+		parent = new Node(data);
+	}
+	void add(){
+		
+	}
+
+public static void main(String args[]){
+	
+}
+}

@@ -1,0 +1,14 @@
+package com.implement.treeandgraphs;
+
+class NodeBO{
+	Node left;
+	Node right;
+	int size;
+}
+
+
+public class BinarySearchTreeImpl {
+public static void main(String args[]){
+	
+}
+}

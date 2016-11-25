@@ -134,9 +134,18 @@ public class BinarySearchTreeImpl {
 	}
 	public static void main(String arg[]){
 		BinarySearchTreeImpl b = new BinarySearchTreeImpl();
-		b.insert(3);b.insert(8);
-		b.insert(1);b.insert(4);b.insert(6);b.insert(2);b.insert(10);b.insert(9);
-		b.insert(20);b.insert(25);b.insert(15);b.insert(16);
+		b.insert(3);
+		b.insert(8);
+		b.insert(1);
+		b.insert(4);
+		b.insert(6);
+		b.insert(2);
+		b.insert(10);
+		b.insert(9);
+		b.insert(20);
+		b.insert(25);
+		b.insert(15);
+		b.insert(16);
 		System.out.println("Original Tree : ");
 		b.display(b.root);		
 		System.out.println("");

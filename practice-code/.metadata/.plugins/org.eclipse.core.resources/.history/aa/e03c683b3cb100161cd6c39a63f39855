@@ -1,0 +1,11 @@
+package com.implement.stackandqueue;
+
+public class MyStackImpl {
+
+	public static void main(String[] args) {
+	private long[] stackArray;
+	
+
+	}
+
+}

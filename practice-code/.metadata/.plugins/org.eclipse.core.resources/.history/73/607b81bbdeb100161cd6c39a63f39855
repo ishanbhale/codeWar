@@ -1,0 +1,44 @@
+package com.implement.treeandgraphs;
+
+class NodeBO{
+	NodeBO left;
+	NodeBO right;
+	int data;
+	public NodeBO(int data) {
+		super();
+		this.data = data;
+	}
+	
+	
+}
+
+public class BinarySearchTreeImpl {
+	NodeBO parent;
+	int size;
+	int data;
+	BinarySearchTreeImpl(){
+		parent = new NodeBO(data);
+	}
+	void add(int data){
+		if(size == 0){
+			parent.data = data;
+			size++;
+		}else{
+			add(parent, new NodeBO(data));
+		}
+	}
+	
+	void add(NodeBO root, NodeBO node){
+		if(root.data<node.data){
+			root.left = node;
+		}else{
+			root.right = node;
+		}
+		
+		
+	}
+
+public static void main(String args[]){
+	BinarySearchTreeImpl obj = new BinarySearchTreeImpl();
+}
+}

@@ -1,0 +1,54 @@
+package com.implement.treeandgraphs;
+
+class Node {
+	Node left;
+	Node right;
+	int data;
+	public Node(int data)
+    {
+        this.data = data;
+    }
+}
+
+
+
+public class BinaryTreeImpl {
+
+Node parent;
+int data;
+int size;
+
+	public BinaryTreeImpl() {
+	super();
+	parent = new Node(data);
+}
+	
+	void add(int data){
+		if(size == 0){
+			parent.data = data;
+			size++;
+		}
+	
+	add(parent,new Node(data));
+		
+	}
+	void add(Node root, Node node){
+		if(root.left == null){
+			root.left = node;
+			size++;
+		}else{
+			root.right = node;
+			size++;
+		}
+		
+	}
+
+	public static void main(String[] args) {
+	BinaryTreeImpl obj = new BinaryTreeImpl();
+	obj.add(30);
+	obj.add(40);
+	obj.add(50);
+
+	}
+
+}

@@ -1,0 +1,7 @@
+package com.implement.treeandgraphs;
+
+public class BinarySearchTreeImpl {
+public static void main(String args[]){
+	
+}
+}

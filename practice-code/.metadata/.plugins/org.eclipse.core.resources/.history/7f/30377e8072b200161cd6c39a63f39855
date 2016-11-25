@@ -1,0 +1,13 @@
+package com.implement.sorting;
+
+import java.util.Arrays;
+
+public class MyQuickSortImpl {
+
+	public static void main(String[] args) {
+		int [] arr = {23,19,13,44,24,19,30};
+Arrays.sort(arr);
+System.out.println(arr.toString());
+	}
+
+}

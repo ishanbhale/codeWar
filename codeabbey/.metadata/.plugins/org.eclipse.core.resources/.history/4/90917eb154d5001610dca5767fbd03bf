@@ -1,0 +1,38 @@
+package com.program.sol8;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) throws FileNotFoundException {
+    	File file = new File("D:/Study/Prog_Input/myfile.txt");
+        Scanner in = new Scanner(file);
+        int computedValue = in.nextInt();
+        while(in.hasNext())
+        {
+        	
+        
+        switch(in.nextLine().charAt(0)) {
+        case '+' :
+           System.out.println("Excellent!"); 
+           break;
+        case '*' :
+        case '%' :
+           System.out.println("Well done");
+           break;
+        case 'D' :
+           System.out.println("You passed");
+        case 'F' :
+           System.out.println("Better try again");
+           break;
+        default :
+           System.out.println("Invalid grade");
+     }
+     System.out.println("Your grade is " + grade);
+  }
+    
+    
+
+}

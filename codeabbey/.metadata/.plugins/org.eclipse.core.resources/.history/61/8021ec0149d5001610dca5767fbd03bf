@@ -1,0 +1,40 @@
+package com.program.sol8;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) throws FileNotFoundException {
+    	File file = new File("D:/Study/Prog_Input/myfile.txt");
+        Scanner in = new Scanner(file);
+        int t = in.nextInt();
+        for(int i = 0; i<t ;i++){
+        long day1 = in.nextLong();        
+        long hour1 = in.nextLong();
+        long minute1 = in.nextLong();
+        long second1 = in.nextLong();
+        long day2 = in.nextLong();        
+        long hour2 = in.nextLong();
+        long minute2 = in.nextLong();
+        long second2 = in.nextLong();
+        long time1 = (day1 * 24 * 60* 60) + (hour1 * 60 * 60) + (minute1 * 60) + second1;
+        long time_difference = a * b +c;
+        System.out.print(summation(sum)+ " ");
+        
+        }
+    }
+      public static long summation(long num){
+    	long sum = 0;
+    	  while (num > 0) {
+              sum = sum + num % 10;
+              num = num / 10;
+          }
+    	    	return sum;
+	    }
+    
+    
+    
+
+}

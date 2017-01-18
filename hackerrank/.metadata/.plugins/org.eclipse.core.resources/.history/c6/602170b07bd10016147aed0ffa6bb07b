@@ -1,0 +1,125 @@
+package com.practice.utility;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class Maths {
+	private static long lcm(long a, long b)
+	{
+	    return a * (b / gcd(a, b));
+	}
+
+	public static long lcm(long[] input)
+	{
+	    long result = input[0];
+	    for(int i = 1; i < input.length; i++) result = lcm(result, input[i]);
+	    return result;
+	}
+	private static long gcd(long a, long b)
+	{
+	    while (b > 0)
+	    {
+	        long temp = b;
+	        b = a % b; // % is remainder
+	        a = temp;
+	    }
+	    return a;
+	}
+
+	public static long gcd(long[] input)
+	{
+	    long result = input[0];
+	    for(int i = 1; i < input.length; i++) result = gcd(result, input[i]);
+	    return result;
+	}
+	 public static int reverseNumber(int number){
+         
+	        int reverse = 0;
+	        while(number != 0){
+	            reverse = (reverse*10)+(number%10);
+	            number = number/10;
+	        }
+	        return reverse;
+	    }
+	 public static int[][] combinations(int k, int[] set) {
+		    // binomial(N, K)
+		    int c = (int) binomial(set.length, k);
+		    // where all sets are stored
+		    int[][] res = new int[c][Math.max(0, k)];
+		    // the k indexes (from set) where the red squares are
+		    // see image above
+		    int[] ind = k < 0 ? null : new int[k];
+		    // initialize red squares
+		    for (int i = 0; i < k; ++i) { ind[i] = i; }
+		    // for every combination
+		    for (int i = 0; i < c; ++i) {
+		        // get its elements (red square indexes)
+		        for (int j = 0; j < k; ++j) {
+		            res[i][j] = set[ind[j]];
+		        }
+		        // update red squares, starting by the last
+		        int x = ind.length - 1;
+		        boolean loop;
+		        do {
+		            loop = false;
+		            // move to next
+		            ind[x] = ind[x] + 1;
+		            // if crossing boundaries, move previous
+		            if (ind[x] > set.length - (k - x)) {
+		                --x;
+		                loop = x >= 0;
+		            } else {
+		                // update every following square
+		                for (int x1 = x + 1; x1 < ind.length; ++x1) {
+		                    ind[x1] = ind[x1 - 1] + 1;
+		                }
+		            }
+		        } while (loop);
+		    }
+		    return res;
+		}
+	 public static <T> Set<Set<T>> powerSet(Set<T> originalSet) {
+		    Set<Set<T>> sets = new HashSet<Set<T>>();
+		    if (originalSet.isEmpty()) {
+		        sets.add(new HashSet<T>());
+		        return sets;
+		    }
+		    List<T> list = new ArrayList<T>(originalSet);
+		    T head = list.get(0);
+		    Set<T> rest = new HashSet<T>(list.subList(1, list.size())); 
+		    for (Set<T> set : powerSet(rest)) {
+		        Set<T> newSet = new HashSet<T>();
+		        newSet.add(head);
+		        newSet.addAll(set);
+		        sets.add(newSet);
+		        sets.add(set);
+		    }       
+		    return sets;
+		}  
+	 private static long binomial(int n, int k) {
+		    if (k < 0 || k > n) return 0;
+		    if (k > n - k) {    // take advantage of symmetry
+		        k = n - k;
+		    }
+		    long c = 1;
+		    for (int i = 1; i < k+1; ++i) {
+		        c = c * (n - (k - i));
+		        c = c / i;
+		    }
+		    return c;
+		}
+	 public static void main(String[] a){
+		 int ar[] = {1,2,3,4,5};
+		 System.out.println(combinations(3, ar));
+		 Set<Integer> mySet = new HashSet<Integer>();
+		 mySet.addAll("s");
+		 mySet.addAll("e");
+		 mySet.addAll("t");
+		 for (Set<Integer> s : powerSet(mySet)) {
+		     System.out.println(s);
+		 }
+	 }
+	   
+}

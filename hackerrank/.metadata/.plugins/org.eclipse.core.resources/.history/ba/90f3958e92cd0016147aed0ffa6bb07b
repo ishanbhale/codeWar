@@ -1,0 +1,50 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) throws FileNotFoundException {
+		File file = new File("D:/Study/Prog_Input/myfile.txt");
+		Scanner s = new Scanner(file);
+        int t = s.nextInt();
+        TEST: for(int i = 0;i<t;i++ ) {
+            int length = s.nextInt();
+            int[] arr = new int[length];
+            for(int k = 0;k<length;k++) {
+                arr[k] = s.nextInt();
+            }
+            
+            int group1GCD = arr[0];
+            int group2GCD = -1;
+            for(int k = 1;k<length;k++) {
+                int g1 = gcd(group1GCD,arr[k]);
+                if(g1==1) {
+                    if(group2GCD == -1) {
+                        group2GCD = arr[k];
+                    } else {
+                        group2GCD = gcd(group2GCD,arr[k]);
+                    }
+                } else {
+                    group1GCD = g1;
+                }
+                if(group1GCD == 1 || group2GCD == 1) {
+                    System.out.println("NO");
+                    continue TEST;
+                }
+            }
+            System.out.println("YES");
+            
+        }
+    }
+    public static int gcd(int a, int b) {
+        while(b!=0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+}

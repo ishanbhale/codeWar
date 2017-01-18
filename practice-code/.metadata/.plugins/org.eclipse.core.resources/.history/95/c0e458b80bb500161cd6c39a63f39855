@@ -1,0 +1,54 @@
+package com.practice.tree;
+
+
+class TreeNode{
+	TreeNode left;
+	TreeNode right;
+	int data;
+	public TreeNode(int data) {
+		super();
+		this.data = data;
+	}
+}
+public class LevelOrderTraversalImpl {
+	TreeNode root;
+	
+	
+public LevelOrderTraversalImpl() {
+		super();
+		this.root = root;
+	}
+
+void printLevelOrder(TreeNode root){
+	int height = height(root);
+	System.out.println(height);
+}
+int height(TreeNode root){
+	
+	int lHeight = 0;
+	int rHeight = 0;
+	
+	lHeight = height(root.left);
+	rHeight = height(root.right);
+	
+	if(lHeight>rHeight)
+		return lHeight+1;
+	else 
+		return rHeight+1;
+}
+
+public static void main(String[] args)	{
+
+LevelOrderTraversalImpl tree = new LevelOrderTraversalImpl();
+tree.root= new TreeNode(1);
+tree.root.left= new TreeNode(2);
+tree.root.right= new TreeNode(3);
+tree.root.left.left= new TreeNode(4);
+tree.root.left.right= new TreeNode(5);
+	
+System.out.println("Level order traversal of binary tree is ");
+}
+
+
+
+}

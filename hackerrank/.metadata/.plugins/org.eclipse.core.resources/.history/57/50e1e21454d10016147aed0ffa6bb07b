@@ -1,0 +1,33 @@
+package com.practice.geekforgeeks.twosets;
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) throws FileNotFoundException {
+		File file = new File("D:/Study/Prog_Input/myfile.txt");
+		Scanner in = new Scanner(file);
+		 String s = in.next();
+	        String t = in.next();
+	        int k = in.nextInt();
+	        int toDelete = 0;
+	        int i = 0;
+	        while (i < s.length() && i < t.length() && s.charAt(i) == t.charAt(i)) {
+	            i++;
+	        }
+	        toDelete = s.length() - i;
+	        int ops = toDelete + (t.length() - i);
+	        if (ops <= k && ((k - ops) % 2 == 0 || (k - ops) > 2 * i)) {
+	            System.out.println("Yes");
+	        } else {
+	            System.out.println("No");
+	        }
+       
+
+            
+    }
+        }

@@ -1,0 +1,36 @@
+package com.practice.geekforgeeks.twosets;
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+import com.practice.utility.Maths;
+
+public class Solution {
+
+    public static void main(String[] args) throws FileNotFoundException {
+		File file = new File("D:/Study/Prog_Input/myfile.txt");
+		Scanner in = new Scanner(file);
+		int t = in.nextInt();
+		
+		for(int i =0 ; i<t;i++){
+			int n = in.nextInt();
+			int number = n;
+			int div = 0;
+			int count = 0;
+		
+			  while(number != 0){
+				  	div = number %10;
+		            number = number/10;
+		            div = 
+		       if(number!=0 && n%number == 0)
+		    	   count++;
+		        }
+			 System.out.println(count);
+		}
+
+    }
+    
+}

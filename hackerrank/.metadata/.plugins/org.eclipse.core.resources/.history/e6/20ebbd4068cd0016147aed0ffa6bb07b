@@ -1,0 +1,29 @@
+package com.practice.implementation.minimaxsum;
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+class Deal implements Comparable{
+    int tCnt;
+    int bribe;
+    public int compareTo(Object b){
+        Deal d=(Deal)b;
+        return this.bribe-d.bribe;
+    }
+}
+public class Solution {
+    public static void main(String[] args) throws FileNotFoundException {
+		File file = new File("D:/Study/Prog_Input/myfile.txt");
+		Scanner sc = new Scanner(file);
+		int n = sc.nextInt();
+		int op1 = sc.nextInt();
+		int op2 = sc.nextInt();
+		int a[] = new int[n];
+		for(int i =0; i< n; i++){
+			a[i] = sc.nextInt();
+				}
+       Arrays.sort(a);
+    }
+}

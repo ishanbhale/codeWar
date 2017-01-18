@@ -1,0 +1,24 @@
+package com.practice.tree;
+
+
+
+class InorderNode{
+	InorderNode left;
+	InorderNode right;
+	int data;
+	public InorderNode() {
+		super();
+	}
+	
+}
+
+
+public class InOrderTraversalImpl {
+
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

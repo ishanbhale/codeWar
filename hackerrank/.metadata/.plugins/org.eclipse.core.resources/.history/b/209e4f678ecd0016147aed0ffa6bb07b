@@ -1,0 +1,37 @@
+package com.practice.implementation.minimaxsum;
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) FileNotFoundException {
+		File file = new File("D:/Study/Prog_Input/myfile.txt");
+		Scanner in = new Scanner(file);
+        boolean flag;
+        int T,N,inp;
+        List<Integer> nums = new ArrayList<Integer>();
+        T = in.nextInt();
+        for(int i=0;i<T;i++)
+            {
+            flag = false;
+            N = in.nextInt();
+            for(int j=0;j<N;j++)
+                {
+                  inp = in.nextInt();
+                  if(inp == 1)
+                      flag = true;
+                  nums.add(inp);
+               }
+            if(flag)
+                System.out.println("NO");
+            else
+                {
+                System.out.println("YES");
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+package com.practice;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ComparableMain {
+
+ 
+ public static void main(String[] args) {
+   ComparableCountry indiaComparableCountry=new ComparableCountry(1, "India");
+   ComparableCountry chinaComparableCountry=new ComparableCountry(4, "China");
+   ComparableCountry nepalComparableCountry=new ComparableCountry(3, "Nepal");
+   ComparableCountry bhutanComparableCountry=new ComparableCountry(2, "Bhutan");
+   
+         List<ComparableCountry> listOfCountries = new ArrayList<ComparableCountry>();
+         listOfCountries.add(indiaComparableCountry);
+         listOfCountries.add(chinaComparableCountry);
+         listOfCountries.add(nepalComparableCountry);
+         listOfCountries.add(bhutanComparableCountry);
+  
+         System.out.println("Before Sort  : ");
+         for (int i = 0; i < listOfCountries.size(); i++) {
+    ComparableCountry ComparableCountry=(ComparableCountry) listOfCountries.get(i);
+    System.out.println("ComparableCountry Id: "+ComparableCountry.getCountryId()+"||"+"ComparableCountry name: "+ComparableCountry.getCountryName());
+   }
+         Collections.sort(listOfCountries);
+         
+         System.out.println("After Sort  : ");
+         for (int i = 0; i < listOfCountries.size(); i++) {
+    ComparableCountry ComparableCountry=(ComparableCountry) listOfCountries.get(i);
+    System.out.println("ComparableCountry Id: "+ComparableCountry.getCountryId()+"|| "+"ComparableCountry name: "+ComparableCountry.getCountryName());
+   }
+ }
+
+}

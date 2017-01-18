@@ -1,0 +1,53 @@
+package com.practice.implementation.minimaxsum;
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+class Deal implements Comparable{
+    int tCnt;
+    int bribe;
+    public int compareTo(Object b){
+        Deal d=(Deal)b;
+        return this.bribe-d.bribe;
+    }
+}
+public class Solution {
+    public static void main(String[] args) throws FileNotFoundException {
+		File file = new File("D:/Study/Prog_Input/myfile.txt");
+		Scanner sc = new Scanner(file);
+        int n=sc.nextInt();
+        Deal d[]=new Deal[n];
+        int sum[]=new int[n];
+        for(int i=0;i<n;i++){
+            d[i]=new Deal();
+            d[i].bribe=sc.nextInt();
+            d[i].tCnt=sc.nextInt();
+        }
+        Arrays.sort(d);
+        sum[0]=d[0].bribe;
+        for(int i=1;i<n;i++){
+            sum[i]=sum[i-1]+d[i].bribe;
+        }
+        int cnt=0,i=0,j=n-1;
+        while(i<=j){
+            if(d[j].tCnt==0)
+                j--;
+            else if(d[j].bribe<sum[d[j].tCnt-1]){
+                cnt+=d[j].bribe;
+                j--;
+            }else{
+                if(d[j].tCnt>j){
+                    cnt+=d[j].bribe;
+                    j--;
+                }else{
+                    cnt+=sum[d[j].tCnt-1];
+                    i+=d[j].tCnt;
+                    j--;
+                }
+            }
+        }
+        System.out.println(cnt);
+    }
+}

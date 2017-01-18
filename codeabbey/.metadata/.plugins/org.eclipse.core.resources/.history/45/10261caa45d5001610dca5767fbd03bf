@@ -1,0 +1,27 @@
+package com.program.sol8;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) throws FileNotFoundException {
+    	File file = new File("D:/Study/Prog_Input/myfile.txt");
+        Scanner in = new Scanner(file);
+        int t = in.nextInt();
+        for(int i = 0; i<t ;i++){
+        long a = in.nextLong();        
+        long b = in.nextLong();
+        long c = in.nextLong();
+        long a = (y2-y1)/(x2-x1);
+        long b = y2 - (a*x2);
+        System.out.print("("+a +" "+ b +") ");
+       
+        
+        
+        
+        }
+    }
+
+}

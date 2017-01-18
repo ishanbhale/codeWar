@@ -1,0 +1,20 @@
+package com.practice.geekforgeeks.twosets;
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) throws FileNotFoundException {
+		File file = new File("D:/Study/Prog_Input/myfile.txt");
+		Scanner in = new Scanner(file);
+		 String n = in.next();
+	        String k = in.next();
+	       
+
+            
+    }
+        }

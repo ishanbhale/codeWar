@@ -1,0 +1,72 @@
+package com.practice.implementation.minimaxsum;
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) throws FileNotFoundException {
+		File file = new File("D:/Study/Prog_Input/myfile.txt");
+		Scanner in = new Scanner(file);
+        int T = in.nextInt();
+        for (int t = 0; t < T; t++) {
+            int n = in.nextInt();
+            List<Integer> list = new ArrayList<Integer>();
+            for (int i = 0; i < n; i++) {
+                list.add(in.nextInt());
+            }
+            int count = 0;
+            List<Integer> withA = new ArrayList<Integer>();
+            List<Integer> notWithA = new ArrayList<Integer>();
+            for (int i = 0, a = list.get(0); i < n; i++) {
+                if (gcd(a, list.get(i)) > 1) {
+                    count++;
+                    withA.add(list.get(i));
+                } else {
+                    notWithA.add(list.get(i));
+                }
+            }
+            if (count < n / 2) {
+                System.out.println("NO");
+                continue;
+            }
+            count = 0;
+            boolean flag = true;
+            int b = notWithA.get(0) ;
+            
+            for (int i = 0; i < notWithA.size(); i++) {
+                if (gcd(b, notWithA.get(i)) > 1) {
+                    count++;
+                } else{
+                    System.out.println("NO");
+                    flag = false;
+                    break;
+                }
+            }
+            if (!flag) continue;
+            for (int a : withA) {
+                if (gcd(b, a) > 1) {
+                    count++;
+                }
+            }
+            if (count < n / 2) {
+                System.out.println("NO");
+                continue;
+            }
+            System.out.println("YES");
+        }
+    }
+    
+    private static int gcd(int a, int b) {
+        if (a < b) {
+            return gcd(b, a);
+        }
+        if (a % b == 0) {
+            return b;
+        }
+        return gcd(b, a % b);
+    }
+}

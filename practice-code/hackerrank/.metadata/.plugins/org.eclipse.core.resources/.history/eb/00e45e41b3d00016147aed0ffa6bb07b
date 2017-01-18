@@ -1,0 +1,23 @@
+package com.practice.geekforgeeks.twosets;
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+import com.practice.utility.Maths;
+
+public class Solution {
+
+    public static void main(String[] args) throws FileNotFoundException {
+		File file = new File("D:/Study/Prog_Input/myfile.txt");
+		Scanner in = new Scanner(file);
+		int number = in.nextInt();
+		 BigInteger fact=new BigInteger("1");  
+		for(int i=1;i<=number;i++){    
+		      fact=fact*i;    
+		  }  
+   
+    
+}

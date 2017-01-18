@@ -1,0 +1,132 @@
+package com.practice.implementation.minimaxsum;
+
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.TreeSet;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.StringTokenizer;
+import java.util.Arrays;
+
+/**
+ * Built using CHelper plug-in
+ * Actual solution is at the top
+ *
+ * @author AlexFetisov
+ */
+public class Solution {
+    public static void main(String[] args) {
+        InputStream inputStream = System.in;
+        OutputStream outputStream = System.out;
+        InputReader in = new InputReader(inputStream);
+        PrintWriter out = new PrintWriter(outputStream);
+        TaskD_HR solver = new TaskD_HR();
+        solver.solve(1, in, out);
+        out.close();
+    }
+
+    static class TaskD_HR {
+        public void solve(int testNumber, InputReader in, PrintWriter out) {
+            int n = in.nextInt();
+            TaskD_HR.Teacher[] teachers = new TaskD_HR.Teacher[n];
+
+            for (int i = 0; i < n; ++i) {
+                teachers[i] = new TaskD_HR.Teacher(in.nextInt(), in.nextInt(), i);
+            }
+            Arrays.sort(teachers);
+            long res = Long.MAX_VALUE;
+            TreeSet<TaskD_HR.Teacher> haveToPay = new TreeSet<TaskD_HR.Teacher>(new Comparator<TaskD_HR.Teacher>() {
+
+                public int compare(TaskD_HR.Teacher o1, TaskD_HR.Teacher o2) {
+                    if (o1.b != o2.b) return o1.b - o2.b;
+                    return o1.id - o2.id;
+                }
+            });
+            long sum = 0;
+            for (TaskD_HR.Teacher t : teachers) {
+                haveToPay.add(t);
+                sum += t.c;
+            }
+            TreeSet<TaskD_HR.Teacher> alreadyGood = new TreeSet<TaskD_HR.Teacher>();
+
+            for (int amBribe = 0; amBribe <= n; ++amBribe) {
+                long cost = 0;
+                while (!haveToPay.isEmpty()) {
+                    if (haveToPay.first().b <= amBribe) {
+                        alreadyGood.add(haveToPay.first());
+                        sum -= haveToPay.first().c;
+                        haveToPay.remove(haveToPay.first());
+                    } else {
+                        break;
+                    }
+                }
+                int rest = amBribe - haveToPay.size();
+                if (rest < 0) rest = 0;
+                Iterator<TaskD_HR.Teacher> it = alreadyGood.iterator();
+                for (TaskD_HR.Teacher t : alreadyGood) {
+                    if (rest == 0) break;
+                    cost += t.c;
+                    --rest;
+                }
+                res = Math.min(res, cost + sum);
+            }
+            out.println(res);
+        }
+
+        class Teacher implements Comparable<TaskD_HR.Teacher> {
+            long c;
+            int b;
+            int id;
+
+            public Teacher(long c, int b, int id) {
+                this.c = c;
+                this.b = b;
+                this.id = id;
+            }
+
+
+            public int compareTo(TaskD_HR.Teacher o) {
+                if (c != o.c) return Long.signum(c - o.c);
+                if (b != o.b) return b - o.b;
+                return id - o.id;
+            }
+
+        }
+
+    }
+
+    static class InputReader {
+        private BufferedReader reader;
+        private StringTokenizer stt;
+
+        public InputReader(InputStream stream) {
+            reader = new BufferedReader(new InputStreamReader(stream));
+        }
+
+        public String nextLine() {
+            try {
+                return reader.readLine();
+            } catch (IOException e) {
+                return null;
+            }
+        }
+
+        public String nextString() {
+            while (stt == null || !stt.hasMoreTokens()) {
+                stt = new StringTokenizer(nextLine());
+            }
+            return stt.nextToken();
+        }
+
+        public int nextInt() {
+            return Integer.parseInt(nextString());
+        }
+
+    }
+}

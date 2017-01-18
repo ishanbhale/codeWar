@@ -1,0 +1,15 @@
+package com.practice.tree;
+
+
+class TreeNode{
+	TreeNode left;
+	TreeNode right;
+	int data;
+	public TreeNode(int data) {
+		super();
+		this.data = data;
+	}
+}
+public class LevelOrderTraversalImpl {
+TreeNode root;
+}
